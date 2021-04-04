@@ -115,9 +115,7 @@ select s_id from
 ((select c_id from score where s_id='01') as a
 join score on a.c_id=score.c_id) where s_id !='01'group by s_id having count(s_id) =(select count(c_id) from score where s_id='01');
 
-13.把score表中张三老师教的课的成绩都改成此课程的平均绩点【update先不想看】
-太难了！
-
+13.把score表中张三老师教的课的成绩都改成此课程的平均绩点
 
 
 UPDATE Score AS aJOIN (
@@ -174,7 +172,7 @@ select * from student where s_id in
 
 14.按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩
 这里涉及case when这个语句
-case when 用于计算条件列表并返回多个可能结果表达式之一【不明白】
+case when 用于计算条件列表并返回多个可能结果表达式之一
 
 select s_id,
 max(case when c_id='01' then s_score else null end)'01',
